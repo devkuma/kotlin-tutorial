@@ -1,3 +1,5 @@
+package basic
+
 class Test {
     fun printStr():String{
         return "test"

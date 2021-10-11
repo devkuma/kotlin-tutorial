@@ -1,3 +1,5 @@
+package basic
+
 open class MyClass {
     fun root() {
         println("i am root")

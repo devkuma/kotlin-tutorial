@@ -1,3 +1,5 @@
+package basic
+
 fun whenFunc(value: Any) {
     when (value) {
         0 -> println("0 입니다.")

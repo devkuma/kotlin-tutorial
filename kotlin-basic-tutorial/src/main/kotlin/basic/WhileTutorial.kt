@@ -1,3 +1,5 @@
+package basic
+
 fun main(args:Array<String>) {
     val mostLang = listOf("javascript", "python", "kotlin", "java", "go")
 

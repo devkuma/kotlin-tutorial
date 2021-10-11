@@ -1,3 +1,5 @@
+package basic
+
 fun main(args: Array<String>) {
     print("한줄 출력")
     print("입니다. \n")

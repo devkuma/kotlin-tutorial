@@ -1,3 +1,5 @@
+package basic
+
 fun main() {
     val langList = listOf("javascript", "python", "kotlin", "java", "go")
 

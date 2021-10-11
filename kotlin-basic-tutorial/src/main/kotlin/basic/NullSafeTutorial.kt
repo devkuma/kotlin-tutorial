@@ -1,3 +1,5 @@
+package basic
+
 fun moneyStatus(name: String, money: Int?): String? {
     return "$name 님의 재산은 ${money?:"0"}원 입니다."
 }
