@@ -1,4 +1,4 @@
-package basic.fuctions.extension
+package basic.functions.extension
 
 
 //fun Any?.toString(): String {

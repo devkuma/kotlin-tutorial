@@ -1,4 +1,4 @@
-package basic.fuctions.extension
+package basic.functions.extension
 
 class Example {
     fun printFunctionType() { println("Class method") }

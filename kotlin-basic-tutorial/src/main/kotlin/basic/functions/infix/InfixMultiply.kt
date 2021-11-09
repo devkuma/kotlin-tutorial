@@ -1,4 +1,4 @@
-package basic.fuctions.infix
+package basic.functions.infix
 
 /**
  * infix로 선언된 중위 함수

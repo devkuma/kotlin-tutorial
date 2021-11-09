@@ -1,4 +1,4 @@
-package basic.fuctions.extension
+package basic.functions.extension
 
 class Host(val hostname: String) {
     fun printHostname() {

@@ -1,4 +1,4 @@
-package basic.fuctions.extension
+package basic.functions.extension
 
 open class Shape
 class Rectangle: Shape()
