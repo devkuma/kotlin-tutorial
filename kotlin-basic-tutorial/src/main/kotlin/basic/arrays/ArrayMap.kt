@@ -11,15 +11,15 @@ fun main() {
     )
 
     // lambda으로 user 인스턴스를 받아 올수 있다.
-    array.map({ user -> user.name }).forEach { print("${it},") }
+    array.map({ user -> user.name }).forEach { print("$it,") }
     println()
 
     // 괄호'（）'은 생략할 수 있다.
-    array.map { user -> user.name }.forEach { print("${it},") }
+    array.map { user -> user.name }.forEach { print("$it,") }
     println()
 
     // 'it'으로 객체를 받아 올 수 있다(이 'it'는 user 인스턴스를 가르킨다).
-    array.map { it.name }.forEach { print("${it},") }
+    array.map { it.name }.forEach { print("$it,") }
 }
 
 
