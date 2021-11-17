@@ -16,7 +16,8 @@ repositories {
 	mavenCentral()
 }
 
-extra["snippetsDir"] = file("build/generated-snippets")
+//extra["snippetsDir"] = file("build/generated-snippets")
+val snippetsDir by extra { file("build/generated-snippets") } // 변수 변경
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -25,6 +26,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+
+	asciidoctor("org.springframework.restdocs:spring-restdocs-asciidoctor") // 1
 }
 
 tasks.withType<KotlinCompile> {
@@ -44,5 +47,27 @@ tasks.test {
 
 tasks.asciidoctor {
 	inputs.dir(snippetsDir)
-	dependsOn(test)
+	//dependsOn(test)
+	dependsOn(tasks.test) // 변경
+
+	doFirst { // 2
+		delete {
+			file("src/main/resources/static/docs")
+		}
+	}
+}
+
+tasks.register("copyHTML", Copy::class) { // 3
+	dependsOn(tasks.asciidoctor)
+	from(file("build/asciidoc/html5"))
+	into(file("src/main/resources/static/docs"))
+}
+
+tasks.build { // 4
+	dependsOn(tasks.getByName("copyHTML"))
+}
+
+tasks.bootJar { // 5
+	dependsOn(tasks.asciidoctor)
+	dependsOn(tasks.getByName("copyHTML"))
 }
