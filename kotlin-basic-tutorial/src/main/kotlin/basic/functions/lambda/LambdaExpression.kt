@@ -1,4 +1,4 @@
-package basic.lambda
+package basic.functions.lambda
 
 fun main() {
     println("== Sample 1 ================")
