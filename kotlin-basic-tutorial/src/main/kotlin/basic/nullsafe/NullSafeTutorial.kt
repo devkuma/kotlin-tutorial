@@ -22,5 +22,10 @@ fun main(args:Array<String>) {
     val library:String? = null
     println(library?.uppercase())
     println(library!!.uppercase());
+
+
+    val str: String? =  null
+
+    println(str!!.length)
 }
 
