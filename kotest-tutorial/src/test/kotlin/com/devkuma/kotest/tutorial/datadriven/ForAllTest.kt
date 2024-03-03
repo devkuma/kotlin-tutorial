@@ -1,4 +1,4 @@
-package com.devkuma.kotest.tutorial.data
+package com.devkuma.kotest.tutorial.datadriven
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.data.forAll
