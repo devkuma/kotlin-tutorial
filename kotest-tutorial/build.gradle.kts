@@ -43,7 +43,14 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.9")
 
 
+    //
+    implementation("io.kotest:kotest-property-jvm:5.8.1")
+
+
     implementation("org.slf4j:slf4j-simple:1.7.36")
+
+    testImplementation("io.kotest:kotest-assertions-core-jvm:5.8.1")
+
 
 
 
@@ -56,6 +63,10 @@ tasks.test {
         outputs.upToDateWhen {false}
         showStandardStreams = true
     }
+}
+
+tasks.withType<Test>().configureEach {
+    jvmArgs("--add-opens=java.base/java.util=ALL-UNNAMED")
 }
 
 val test by tasks.getting(Test::class) {
