@@ -18,9 +18,10 @@ dependencies {
     implementation("org.apache.commons:commons-lang3:3.14.0")
 
     testImplementation(kotlin("test"))
-    testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
-    testImplementation("io.kotest:kotest-framework-datatest:5.8.0")
-    testImplementation("io.kotest:kotest-property:5.8.0")
+    testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+    testImplementation("io.kotest:kotest-assertions-core:5.9.1")
+    testImplementation("io.kotest:kotest-framework-datatest:5.9.1")
+    testImplementation("io.kotest:kotest-property:5.9.1")
 
 
     testImplementation("org.testcontainers:junit-jupiter:1.19.6")
@@ -63,6 +64,9 @@ tasks.test {
         outputs.upToDateWhen {false}
         showStandardStreams = true
     }
+
+    // 특정 태그의 테스트만 실행
+    //systemProperty("kotest.tags", "Fast & !Slow")
 }
 
 tasks.withType<Test>().configureEach {
